@@ -1,0 +1,5 @@
+RegisterNetEvent('spawnPed', function(typeZ, modelHash, coords, heading) 
+    local ped = CreatePed(typeZ, modelHash, x, y, z, heading, true, false)
+    local networkId = NetworkGetNetworkIdFromEntity(ped)
+    TriggerClientEvent('setPedArmor', networkId)    
+end)
