@@ -17,7 +17,7 @@ end)
 RegisterNetEvent('setPedArmor', function(networkId)
     print(NetworkDoesEntityExistWithNetworkId(networkId))
     while not DoesEntityExist(NetToPed(networkId)) do 
-        Wait(10)
+        Wait(100)
     end
         local ped = NetworkGetEntityFromNetworkId(networkId)
         SetPedArmour(ped, 100)
