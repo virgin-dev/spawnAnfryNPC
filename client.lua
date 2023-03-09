@@ -15,11 +15,11 @@ RegisterCommand('PedSpawn', function()
 end)
 
 RegisterNetEvent('setPedArmor', function(networkId)
-    if NetworkDoesEntityExistWithNetworkId(networkId) then 
+    print(NetworkDoesEntityExistWithNetworkId(networkId))
+    while not DoesEntityExist(NetToPed(networkId)) do 
+        Wait(10)
+    end
         local ped = NetworkGetEntityFromNetworkId(networkId)
         SetPedArmour(ped, 100)
         print(GetPedArmour(ped))
-    else 
-        print("NetworkDoesEntityExistWithNetworkId = false")
-    end
 end)
